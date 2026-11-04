@@ -1,5 +1,7 @@
-# Source masters — kept locally for re-cropping, not needed at runtime
-photo.jpeg
+# photo.jpeg is committed as the headshot master (backup / re-cropping).
+# It is excluded from the deploy via .vercelignore, not from version control.
+
+# Superseded by portrait.jpg — kept locally only
 photo.jpg
 
 # Local tooling
