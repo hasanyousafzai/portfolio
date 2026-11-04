@@ -4,8 +4,23 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#080A0F" />
-<title>Hasan Saleem — Senior Software Engineer</title>
-<meta name="description" content="Hasan Saleem — Senior Software Engineer in Riyadh. Java/Spring Boot backend and Flutter/Android mobile. Microservices, REST APIs, cloud, and AI/RAG." />
+<title>Hasan Saleem — Senior Backend &amp; AI Engineer</title>
+<meta name="description" content="Hasan Saleem — Senior Software Engineer in Riyadh. Java/Spring Boot microservices, REST &amp; event-driven APIs, cloud platforms, and production AI/RAG systems. Also ships Flutter &amp; native Android." />
+<meta property="og:title" content="Hasan Saleem — Senior Backend &amp; AI Engineer" />
+<meta property="og:description" content="Java/Spring Boot microservices, production AI/RAG pipelines, and 13 shipped platforms &amp; apps." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://portfolio-4r7j.vercel.app/" />
+<meta property="og:image" content="https://portfolio-4r7j.vercel.app/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Hasan Saleem — Senior Software Engineer. Java/Spring Boot backend, AI &amp; RAG systems, cloud." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hasan Saleem — Senior Backend &amp; AI Engineer" />
+<meta name="twitter:description" content="Java/Spring Boot microservices, production AI/RAG pipelines, and 13 shipped platforms &amp; apps." />
+<meta name="twitter:image" content="https://portfolio-4r7j.vercel.app/og-image.jpg" />
+<link rel="canonical" href="https://portfolio-4r7j.vercel.app/" />
+<link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="./apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -13,7 +28,7 @@
   :root{
     --bg:#080A0F; --bg2:#0C1017; --surface:#111825; --surface2:#151D2C;
     --line:#1E2838; --ink:#EAEEF5; --muted:#8B95A7; --faint:#5A6478;
-    --accent:#5B8DEF; --accent2:#8B6FF0;
+    --accent:#5B8DEF; --accent2:#8B6FF0; --accent3:#2DD4BF;
     --maxw:1120px;
     --display:"Space Grotesk",system-ui,sans-serif;
     --body:"Inter",system-ui,sans-serif;
@@ -27,40 +42,75 @@
   .mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
   .accent-text{background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
+  /* Ambient background */
+  .aurora{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+  .aurora i{position:absolute;display:block;border-radius:50%;filter:blur(90px);opacity:.5}
+  .aurora i:nth-child(1){width:620px;height:620px;top:-220px;left:-120px;background:radial-gradient(circle,rgba(91,141,239,.34),transparent 65%);animation:drift1 22s ease-in-out infinite}
+  .aurora i:nth-child(2){width:540px;height:540px;top:4%;right:-160px;background:radial-gradient(circle,rgba(139,111,240,.30),transparent 65%);animation:drift2 26s ease-in-out infinite}
+  .aurora i:nth-child(3){width:460px;height:460px;top:52%;left:38%;background:radial-gradient(circle,rgba(45,212,191,.14),transparent 65%);animation:drift3 30s ease-in-out infinite}
+  @keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,60px)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-80px,50px)}}
+  @keyframes drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-70px)}}
+  .grid-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:linear-gradient(rgba(91,141,239,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(91,141,239,.045) 1px,transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 10%,transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 10%,transparent 75%)}
+
   /* Nav */
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(8,10,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(8,10,15,.74);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
   .brand{font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
   .brand span{color:var(--accent)}
-  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links{display:flex;gap:28px;align-items:center}
   .nav-links a{font-size:.9rem;color:var(--muted);transition:color .2s}
   .nav-links a:hover{color:var(--ink)}
   .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--body);font-weight:600;font-size:.88rem;padding:10px 18px;border-radius:9px;border:1px solid var(--line);color:var(--ink);background:var(--surface);transition:all .2s;cursor:pointer}
   .btn:hover{border-color:var(--accent);color:#fff}
   .btn.solid{background:linear-gradient(120deg,var(--accent),var(--accent2));border:none;color:#fff}
   .btn.solid:hover{filter:brightness(1.08)}
+  .btn.sm{padding:7px 13px;font-size:.8rem}
+  .burger{display:none;width:42px;height:38px;border:1px solid var(--line);border-radius:9px;background:var(--surface);cursor:pointer;place-items:center}
+  .burger span{display:block;width:17px;height:1.6px;background:var(--ink);box-shadow:0 5px 0 var(--ink),0 -5px 0 var(--ink)}
+  .drawer{display:none;border-top:1px solid var(--line);background:rgba(8,10,15,.97);backdrop-filter:blur(14px)}
+  .drawer.open{display:block}
+  .drawer nav{display:flex;flex-direction:column;padding:10px 0 18px}
+  .drawer nav a{padding:12px 0;color:var(--muted);font-size:.95rem;border-bottom:1px solid var(--line)}
+  .drawer nav a:last-child{border-bottom:none}
 
   /* Hero */
-  .hero{position:relative;padding:80px 0 64px;overflow:hidden}
-  .hero::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:900px;height:700px;background:radial-gradient(circle at 30% 30%,rgba(91,141,239,.20),transparent 60%),radial-gradient(circle at 70% 50%,rgba(139,111,240,.16),transparent 60%);filter:blur(30px);z-index:0;pointer-events:none}
-  .hero .wrap{position:relative;z-index:1}
+  .hero{position:relative;padding:76px 0 56px}
   .hero-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:48px;align-items:center}
-  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.03em;margin:16px 0 18px}
-  .hero .role-line{font-family:var(--display);font-size:clamp(1rem,2vw,1.25rem);color:var(--ink);font-weight:500;margin-bottom:18px}
+  .hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.6rem,6vw,4.4rem);line-height:1.02;letter-spacing:-.03em;margin:14px 0 16px}
+  .hero .role-line{font-family:var(--display);font-size:clamp(1rem,2vw,1.25rem);color:var(--ink);font-weight:500;margin-bottom:16px}
   .hero .role-line b{color:var(--accent);font-weight:600}
-  .hero .intro{color:var(--muted);max-width:560px;margin-bottom:20px}
-  .hero .loc{font-family:var(--mono);font-size:.78rem;color:var(--faint);margin-bottom:28px}
+  .hero .role-line i{color:var(--accent3);font-style:normal;font-weight:600}
+  .hero .intro{color:var(--muted);max-width:570px;margin-bottom:18px}
+  .hero .loc{font-family:var(--mono);font-size:.78rem;color:var(--faint);margin-bottom:26px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent3);box-shadow:0 0 0 4px rgba(45,212,191,.14);animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
 
   /* Portrait */
   .portrait{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px}
-  .avatar{width:210px;height:210px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:4.5rem;color:#fff;background:linear-gradient(150deg,var(--surface2),var(--bg2));border:1px solid var(--line);position:relative;box-shadow:0 0 0 6px rgba(91,141,239,.06);overflow:hidden}
+  .avatar{width:210px;height:210px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(150deg,var(--surface2),var(--bg2));border:1px solid var(--line);position:relative;box-shadow:0 0 0 6px rgba(91,141,239,.06);overflow:hidden}
   .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
   .avatar::before{content:"";position:absolute;inset:-3px;border-radius:50%;padding:3px;background:linear-gradient(140deg,var(--accent),var(--accent2),transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
   .portrait .cap{font-family:var(--mono);font-size:.68rem;color:var(--faint);text-align:center;letter-spacing:.06em}
+  .pbadges{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+  .pbadge{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:#A8B6C9}
+
+  /* Marquee */
+  .marquee{margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:14px 0;position:relative;
+    mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+  .mtrack{display:flex;gap:40px;width:max-content;animation:scroll 34s linear infinite}
+  .mtrack span{font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+  .mtrack span::after{content:"◆";margin-left:40px;color:#243249}
+  @keyframes scroll{to{transform:translateX(-50%)}}
 
   /* Stats */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;margin-top:52px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,var(--surface),rgba(12,16,23,.7));overflow:hidden;margin-top:40px}
   .stats div{padding:22px 20px;border-right:1px solid var(--line)}
   .stats div:last-child{border-right:none}
   .stats .n{font-family:var(--display);font-weight:700;font-size:1.7rem;letter-spacing:-.02em;margin-bottom:2px}
@@ -70,31 +120,73 @@
   /* Section shell */
   section{padding:84px 0;position:relative}
   .sechead{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
-  .secnum{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.1em}
+  .secnum{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.1em;white-space:nowrap}
   .secline{flex:1;height:1px;background:var(--line)}
-  h2{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.025em;line-height:1.1;margin-bottom:18px;max-width:720px}
-  .lead{color:var(--muted);max-width:640px;margin-bottom:44px}
+  h2{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.025em;line-height:1.1;margin-bottom:18px;max-width:760px}
+  .lead{color:var(--muted);max-width:660px;margin-bottom:44px}
+  h3.sub{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent3);margin-bottom:16px;font-weight:500}
 
   /* About */
   .about-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:44px}
   .about-body p{color:var(--muted);margin-bottom:16px}
   .about-body p b{color:var(--ink);font-weight:600}
-  .facts{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;height:fit-content}
+  .facts{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;height:fit-content}
   .facts div{padding:16px 20px;border-bottom:1px solid var(--line)}
   .facts div:last-child{border-bottom:none}
   .facts .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:3px}
   .facts .v{font-size:.95rem;color:var(--ink);font-weight:500}
 
+  /* Pipeline / flow strips */
+  .flowcard{border:1px solid var(--line);border-radius:16px;background:linear-gradient(160deg,var(--surface),rgba(12,16,23,.6));padding:26px;margin-bottom:20px;overflow:hidden}
+  .flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+  .flow::-webkit-scrollbar{height:5px}
+  .flow::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+  .fnode{flex:0 0 auto;min-width:132px;background:var(--surface2);border:1px solid var(--line);border-radius:11px;padding:13px 15px;position:relative;transition:border-color .25s,transform .25s}
+  .fnode:hover{border-color:var(--accent);transform:translateY(-3px)}
+  .fnode .fk{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);margin-bottom:4px}
+  .fnode .fv{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.35}
+  .farrow{flex:0 0 auto;display:grid;place-items:center;padding:0 11px;color:#2E4160;font-size:.95rem}
+  .fnote{font-family:var(--mono);font-size:.7rem;color:var(--faint);margin-top:16px;letter-spacing:.03em}
+  .fnode.ai{background:linear-gradient(150deg,rgba(45,212,191,.09),var(--surface2));border-color:#1F4A47}
+  .fnode.ai .fk{color:var(--accent3)}
+
+  /* Production backend roster */
+  .begrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+  .becard{border:1px solid var(--line);border-radius:13px;background:var(--surface);padding:18px;transition:border-color .25s,transform .25s;position:relative}
+  .becard:hover{border-color:#31445F;transform:translateY(-3px)}
+  .becard.ai{background:linear-gradient(150deg,rgba(45,212,191,.07),var(--surface));border-color:#1F4A47}
+  .betop{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex-wrap:wrap}
+  .bedot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--accent3);box-shadow:0 0 0 3px rgba(45,212,191,.13)}
+  .becard h4{font-family:var(--display);font-weight:600;font-size:1rem;line-height:1.2}
+  .becard p{color:var(--muted);font-size:.85rem;margin-bottom:12px}
+  .bestack{font-family:var(--mono);font-size:.63rem;letter-spacing:.05em;color:#9FB0C6;background:var(--surface2);border:1px solid var(--line);border-radius:7px;padding:6px 10px;display:inline-block}
+  .beowner{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-left:auto}
+
+  /* Capability cards */
+  .capgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px}
+  .capcard{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:24px;transition:border-color .25s,transform .25s}
+  .capcard:hover{border-color:#31445F;transform:translateY(-3px)}
+  .capcard .ico{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(140deg,rgba(91,141,239,.18),rgba(139,111,240,.12));border:1px solid var(--line);margin-bottom:14px;font-size:1.05rem}
+  .capcard h4{font-family:var(--display);font-weight:600;font-size:1.08rem;margin-bottom:8px}
+  .capcard p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+  .capcard ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .capcard li{color:var(--muted);font-size:.86rem;padding-left:16px;position:relative}
+  .capcard li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:.72rem}
+
   /* Skills */
   .skillgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .skillcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .skillcard h3{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:500}
+  .skillcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;transition:border-color .2s}
+  .skillcard:hover{border-color:#2C3B52}
+  .skillcard.feat{border-color:#2A3D5C;background:linear-gradient(155deg,rgba(91,141,239,.07),var(--surface))}
+  .skillcard h3{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:500;display:flex;align-items:center;gap:8px}
+  .skillcard h3 em{font-style:normal;font-size:.58rem;padding:2px 7px;border-radius:999px;background:rgba(45,212,191,.12);border:1px solid #1F4A47;color:var(--accent3);letter-spacing:.07em}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-size:.84rem;font-weight:500;padding:6px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--line);color:#C7D0DE}
+  .chip{font-size:.84rem;font-weight:500;padding:6px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--line);color:#C7D0DE;transition:border-color .2s,color .2s}
+  .chip:hover{border-color:var(--accent);color:#fff}
 
   /* Experience */
   .xp{display:flex;flex-direction:column;gap:16px}
-  .xpcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;transition:border-color .2s}
+  .xpcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px;transition:border-color .2s;position:relative}
   .xpcard:hover{border-color:#2C3B52}
   .xptop{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;align-items:baseline}
   .xptop .role{font-family:var(--display);font-weight:600;font-size:1.2rem}
@@ -104,20 +196,49 @@
   .xpcard li{color:var(--muted);font-size:.93rem;padding-left:18px;position:relative}
   .xpcard li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:.8rem}
 
+  /* Filters */
+  .filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}
+  .fbtn{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:all .2s}
+  .fbtn:hover{color:var(--ink);border-color:#31445F}
+  .fbtn.on{background:linear-gradient(120deg,var(--accent),var(--accent2));border-color:transparent;color:#fff}
+
   /* Projects */
   .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .pcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .pcard::after{content:"";position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .3s;background:radial-gradient(400px circle at 100% 0%,rgba(91,141,239,.10),transparent 70%);pointer-events:none}
   .pcard:hover{transform:translateY(-4px);border-color:#31445F;box-shadow:0 20px 40px -22px rgba(91,141,239,.35)}
+  .pcard:hover::after{opacity:1}
+  .pcard.hide{display:none}
+  .pcard.flag{border-color:#2A3D5C}
   .pnum{font-family:var(--display);font-weight:700;font-size:3.4rem;line-height:1;color:transparent;-webkit-text-stroke:1px #24324a;position:absolute;top:16px;right:22px;user-select:none}
-  .pcat{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:8px;display:block;max-width:75%}
-  .pcard h3{font-family:var(--display);font-weight:600;font-size:1.4rem;letter-spacing:-.01em;margin-bottom:10px}
-  .pcard p{color:var(--muted);font-size:.93rem;margin-bottom:16px}
+  .pcat{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:8px;display:block;max-width:72%}
+  .pcard h3{font-family:var(--display);font-weight:600;font-size:1.4rem;letter-spacing:-.01em;margin-bottom:10px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .pill{font-family:var(--mono);font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:rgba(45,212,191,.12);border:1px solid #1F4A47;color:var(--accent3);font-weight:500}
+  .pill.b{background:rgba(91,141,239,.12);border-color:#27405F;color:#8FB4F5}
+  .pcard p{color:var(--muted);font-size:.93rem;margin-bottom:14px}
+  .pcard p b,.lead b{color:var(--ink);font-weight:600}
+  .pcard .impact{font-family:var(--mono);font-size:.7rem;color:#9FB0C6;background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:9px 12px;margin-bottom:14px;letter-spacing:.02em}
   .ptags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
   .ptag{font-family:var(--mono);font-size:.68rem;padding:4px 9px;border-radius:6px;background:var(--surface2);border:1px solid var(--line);color:#9FB0C6}
   .plink{font-family:var(--mono);font-size:.76rem;color:var(--accent);font-weight:500;display:inline-flex;align-items:center;gap:6px}
   .plink::after{content:"↗"}
   .plink.na{color:var(--faint)}
   .plink.na::after{content:""}
+
+  /* Earlier apps */
+  .appgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .appcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+  .appcard:hover{transform:translateY(-3px);border-color:#31445F}
+  .apptop{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .appicon{width:40px;height:40px;flex:0 0 40px;border-radius:11px;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.05rem;color:#fff;letter-spacing:-.02em}
+  .appcard h4{font-family:var(--display);font-weight:600;font-size:1.02rem;line-height:1.2}
+  .appcard .ameta{font-family:var(--mono);font-size:.62rem;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);margin-top:3px}
+  .appcard p{color:var(--muted);font-size:.86rem;margin-bottom:14px;flex:1}
+  .stores{display:flex;flex-wrap:wrap;gap:7px}
+  .store{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;padding:5px 10px;border-radius:7px;border:1px solid var(--line);background:var(--surface2);color:#9FB0C6;transition:all .2s;display:inline-flex;align-items:center;gap:5px}
+  .store:hover{border-color:var(--accent);color:#fff}
+  .store.off{opacity:.5;cursor:default}
+  .store.off:hover{border-color:var(--line);color:#9FB0C6}
 
   /* Contact */
   .contact{text-align:center}
@@ -135,37 +256,61 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
+  @media (max-width:980px){
+    .appgrid,.begrid{grid-template-columns:repeat(2,1fr)}
+  }
   @media (max-width:880px){
     .hero-grid{grid-template-columns:1fr;gap:36px}
     .portrait{order:-1}
-    .about-grid,.skillgrid,.pgrid{grid-template-columns:1fr}
+    .about-grid,.skillgrid,.pgrid,.capgrid{grid-template-columns:1fr}
     .stats{grid-template-columns:repeat(2,1fr)}
     .stats div:nth-child(2){border-right:none}
     .stats div:nth-child(1),.stats div:nth-child(2){border-bottom:1px solid var(--line)}
   }
-  @media (max-width:640px){
-    .nav-links a:not(.btn){display:none}
-    section{padding:60px 0}
-    .hero{padding:48px 0}
+  @media (max-width:720px){
+    .nav-links{display:none}
+    .burger{display:grid}
+    section{padding:62px 0}
+    .hero{padding:44px 0 40px}
+    .appgrid,.begrid{grid-template-columns:1fr}
+    .flowcard{padding:20px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .reveal{opacity:1;transform:none;transition:none}
-    .pcard:hover{transform:none}
+    .pcard:hover,.capcard:hover,.appcard:hover,.fnode:hover{transform:none}
+    .mtrack,.aurora i,.dot{animation:none}
   }
 </style>
 </head>
 <body>
+
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="grid-bg" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">Hasan<span>.</span></a>
     <nav class="nav-links">
       <a href="#about">About</a>
+      <a href="#engineering">Backend &amp; AI</a>
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Work</a>
+      <a href="#apps">Apps</a>
       <a href="#contact" class="btn solid">Let's Talk</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+  <div class="drawer" id="drawer">
+    <nav class="wrap">
+      <a href="#about">About</a>
+      <a href="#engineering">Backend &amp; AI</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Selected Work</a>
+      <a href="#apps">Earlier Apps</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -179,26 +324,39 @@
         <div>
           <div class="mono">// Senior Software Engineer</div>
           <h1>Hasan <span class="accent-text">Saleem</span></h1>
-          <div class="role-line"><b>Java / Spring Boot</b> Backend · <b>Flutter &amp; Native Android</b> · Cloud &amp; AI</div>
-          <p class="intro">I build scalable backend systems and ship production mobile apps — designing microservices and APIs, then delivering the Flutter and Android clients that run on them. Government platforms, live products, and AI/RAG systems.</p>
-          <div class="loc">◈ Building across backend &amp; mobile · Riyadh, Saudi Arabia</div>
+          <div class="role-line"><b>Java / Spring Boot</b> Backend · <i>AI &amp; RAG</i> Systems · Cloud</div>
+          <p class="intro">I design and run the backend: Spring Boot microservices, REST and event-driven APIs, and secure cloud-native platforms for government and enterprise clients. Most recently I've put <b>LLM/RAG pipelines into production</b> — and because I also ship the Flutter and Android clients, I can own a feature from the service all the way to the screen.</p>
+          <div class="loc"><span class="dot"></span> Backend · AI · Mobile — Riyadh, Saudi Arabia</div>
           <div class="hero-cta">
-            <a href="#projects" class="btn solid">View My Work →</a>
+            <a href="#engineering" class="btn solid">Backend &amp; AI Work →</a>
+            <a href="#projects" class="btn">Projects</a>
             <a href="mailto:hassan.uswat@gmail.com" class="btn">Email Me ↗</a>
-            <a href="https://github.com/hassanjani" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
+            <a href="https://github.com/hasanyousafzai" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
           </div>
         </div>
         <div class="portrait">
-          <div class="avatar"><img src="./photo.jpg" alt="Hasan Saleem — Senior Software Engineer" /></div>
-          <div class="cap">Senior Software Engineer<br/>Backend · Mobile · Cloud</div>
+          <div class="avatar"><img src="./portrait.jpg" width="640" height="640" alt="Hasan Saleem — Senior Software Engineer" /></div>
+          <div class="cap">Senior Software Engineer<br/>Backend · AI · Cloud</div>
+          <div class="pbadges">
+            <span class="pbadge">Spring Boot</span>
+            <span class="pbadge">RAG</span>
+            <span class="pbadge">Microservices</span>
+          </div>
         </div>
       </div>
 
       <div class="stats reveal">
         <div><div class="n">6+</div><div class="l">Years Experience</div></div>
-        <div><div class="n">6</div><div class="l">Featured Projects</div></div>
-        <div><div class="n">3</div><div class="l">Backend Ecosystems</div></div>
-        <div><div class="n accent-text">Live</div><div class="l">On Play &amp; App Store</div></div>
+        <div><div class="n">13</div><div class="l">Platforms &amp; Apps Shipped</div></div>
+        <div><div class="n">6</div><div class="l">Production Backends</div></div>
+        <div><div class="n accent-text">AI/RAG</div><div class="l">Running In Production</div></div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="mtrack">
+          <span>Java</span><span>Spring Boot</span><span>Microservices</span><span>Kafka</span><span>REST &amp; SOAP</span><span>IBM DB2</span><span>Watsonx</span><span>Milvus</span><span>RAG</span><span>Node · TypeScript</span><span>.NET 8</span><span>Azure</span><span>Docker</span><span>Flutter</span><span>Kotlin</span>
+          <span>Java</span><span>Spring Boot</span><span>Microservices</span><span>Kafka</span><span>REST &amp; SOAP</span><span>IBM DB2</span><span>Watsonx</span><span>Milvus</span><span>RAG</span><span>Node · TypeScript</span><span>.NET 8</span><span>Azure</span><span>Docker</span><span>Flutter</span><span>Kotlin</span>
+        </div>
       </div>
     </div>
   </section>
@@ -207,19 +365,145 @@
   <section id="about">
     <div class="wrap">
       <div class="sechead"><span class="secnum">01 / About</span><span class="secline"></span></div>
-      <h2>Engineering that ships<br/>and scales.</h2>
+      <h2>Backend that scales.<br/>AI that can be trusted.</h2>
       <div class="about-grid reveal">
         <div class="about-body">
-          <p>I'm a Senior Software Engineer with <b>6+ years</b> building and operating production systems. My core is <b>Java &amp; Spring Boot</b> — microservices, RESTful and event-driven APIs, and secure, cloud-native platforms for government and commercial clients. I currently lead the <b>Data Management</b> service area at SPS across DB2, MySQL, and SQL Server.</p>
-          <p>Alongside the backend, I ship <b>Flutter and native Android</b> apps — offline-first, clean architecture, real-device integrations — several of them live on Google Play and the App Store. Being fluent in both planes means I can own a feature end to end, from the service to the screen.</p>
-          <p>Most recently I've worked on <b>AI/RAG</b> systems: an LLM document-classification pipeline using Watsonx OCR and Milvus vector search, where retrieval quality decides whether the system can be trusted.</p>
+          <p>I'm a Senior Software Engineer with <b>6+ years</b> building and operating production systems. My centre of gravity is <b>Java &amp; Spring Boot</b> — microservices, RESTful and event-driven APIs, and secure cloud-native platforms serving government and commercial clients. I currently lead the <b>Data Management</b> service area at SPS across DB2, MySQL, and SQL Server.</p>
+          <p>Over the last stretch my work has moved deeper into <b>applied AI</b>. I built a production <b>RAG pipeline</b> that classifies incoming documents with Watsonx OCR/LLMs and Milvus vector search against records-management schedules — a problem where retrieval quality, not model choice, decides whether the system can be trusted. That meant owning chunking strategy, embedding choices, and evaluation, not just wiring an API call.</p>
+          <p>I also ship <b>Flutter and native Android</b> apps — offline-first, clean architecture, real-device integrations — with <b>13 platforms and apps</b> delivered across Google Play and the App Store. Being fluent in both planes means I design APIs that are actually pleasant to consume, because I'm usually the one consuming them.</p>
         </div>
         <div class="facts">
+          <div><div class="k">Primary focus</div><div class="v">Backend engineering · AI/RAG</div></div>
+          <div><div class="k">Core stack</div><div class="v">Java · Spring Boot · Cloud</div></div>
+          <div><div class="k">Leadership</div><div class="v">Data Management service lead, SPS</div></div>
           <div><div class="k">Location</div><div class="v">Riyadh, Saudi Arabia</div></div>
           <div><div class="k">Work status</div><div class="v">Transferable Iqama · 30-day notice</div></div>
-          <div><div class="k">Focus</div><div class="v">Backend · Mobile · Cloud · AI</div></div>
-          <div><div class="k">Leadership</div><div class="v">Data Management service lead, SPS</div></div>
           <div><div class="k">Education</div><div class="v">BS Computer Science, University of Swat</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKEND & AI -->
+  <section id="engineering">
+    <div class="wrap">
+      <div class="sechead"><span class="secnum">02 / Backend &amp; AI</span><span class="secline"></span></div>
+      <h2>How I build systems</h2>
+      <p class="lead">Two things I spend most of my time on: service architecture that holds up under real traffic and real compliance requirements, and retrieval pipelines that make LLM output dependable enough to ship.</p>
+
+      <h3 class="sub">Service architecture</h3>
+      <div class="flowcard reveal">
+        <div class="flow">
+          <div class="fnode"><div class="fk">Clients</div><div class="fv">Web · Flutter · Android</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode"><div class="fk">Edge</div><div class="fv">API Gateway<br/>OAuth 2.0 · mTLS</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode"><div class="fk">Services</div><div class="fv">Spring Boot<br/>Microservices</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode"><div class="fk">Events</div><div class="fv">Kafka<br/>Async Workflows</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode"><div class="fk">Data</div><div class="fv">DB2 · MySQL<br/>SQL Server · Redis</div></div>
+        </div>
+        <div class="fnote">// REST + SOAP (CXF) surfaces · Hibernate persistence · JDBC streaming for million-row exports · Docker + Jenkins CI/CD</div>
+      </div>
+
+      <h3 class="sub">Production backends I've built &amp; run</h3>
+      <div class="begrid reveal">
+
+        <div class="becard">
+          <div class="betop"><span class="bedot"></span><h4>SBSD Dashboard</h4></div>
+          <p>Certification and procurement workflow backend for the Commonwealth of Virginia — application processing, review queues, and compliance reporting.</p>
+          <span class="bestack">Java · Spring Boot · DB2 · Angular</span>
+        </div>
+
+        <div class="becard">
+          <div class="betop"><span class="bedot"></span><h4>SBSD Directory</h4></div>
+          <p>Public-facing searchable directory of certified SWaM suppliers, backed by indexed search over the certification data store.</p>
+          <span class="bestack">Java · Spring Boot · DB2</span>
+        </div>
+
+        <div class="becard">
+          <div class="betop"><span class="bedot"></span><h4>SBSD Web Services</h4></div>
+          <p>Secured SOAP service layer consumed by external state agency systems, plus a JDBC-streaming export service for million-row datasets.</p>
+          <span class="bestack">Spring Boot · SOAP/CXF · WS-Security</span>
+        </div>
+
+        <div class="becard">
+          <div class="betop"><span class="bedot"></span><h4>GateKeyper Backend</h4></div>
+          <p>Asset access-control API on IBM Cloud — device registry, operator permissions, and authorization for Bluetooth LE equipment unlocks.</p>
+          <span class="bestack">Node.js · TypeScript · IBM Cloud</span>
+        </div>
+
+        <div class="becard">
+          <div class="betop"><span class="bedot"></span><h4>TallyTask</h4></div>
+          <p>Multi-tenant task, project and expense backend with per-company role-based access control, receipt OCR, and accounting integrations.</p>
+          <span class="bestack">.NET 8 · Azure SQL</span>
+        </div>
+
+        <div class="becard ai">
+          <div class="betop"><span class="bedot"></span><h4>Chesterfield DMS</h4></div>
+          <p>AI document-intelligence backend — a RAG pipeline classifying uploads against county records-management schedules, served over REST.</p>
+          <span class="bestack">Node.js · Watsonx · Milvus</span>
+        </div>
+
+      </div>
+
+      <h3 class="sub">AI / RAG pipeline — in production</h3>
+      <div class="flowcard reveal">
+        <div class="flow">
+          <div class="fnode ai"><div class="fk">Ingest</div><div class="fv">Document Upload<br/>Node · Express API</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode ai"><div class="fk">Extract</div><div class="fv">Watsonx OCR<br/>Text + Layout</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode ai"><div class="fk">Index</div><div class="fv">Chunk + Embed<br/>Milvus Vectors</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode ai"><div class="fk">Retrieve</div><div class="fv">Semantic Search<br/>Top-K Context</div></div>
+          <div class="farrow">→</div>
+          <div class="fnode ai"><div class="fk">Classify</div><div class="fv">LLM Reasoning<br/>Records Schedule</div></div>
+        </div>
+        <div class="fnote">// Grounded output with cited source chunks · retrieval tuned over chunk size and overlap · evaluated against a labelled ground-truth set</div>
+      </div>
+
+      <div class="capgrid reveal">
+        <div class="capcard">
+          <div class="ico">◧</div>
+          <h4>API &amp; Service Design</h4>
+          <p>Contract-first services that survive version changes and multiple consumers.</p>
+          <ul>
+            <li>REST, SOAP (Apache CXF), and GraphQL surfaces</li>
+            <li>Event-driven decoupling with Kafka</li>
+            <li>Domain-separated microservice boundaries</li>
+          </ul>
+        </div>
+        <div class="capcard">
+          <div class="ico">◈</div>
+          <h4>Data &amp; Performance</h4>
+          <p>Service lead for Data Management — where slow queries become everyone's problem.</p>
+          <ul>
+            <li>DB2, MySQL, SQL Server, Azure SQL, PostgreSQL</li>
+            <li>JDBC streaming for million-row exports</li>
+            <li>Query tuning, indexing, Redis caching</li>
+          </ul>
+        </div>
+        <div class="capcard">
+          <div class="ico">◆</div>
+          <h4>AI / LLM Engineering</h4>
+          <p>Retrieval-first AI, built so the output can be audited rather than trusted blindly.</p>
+          <ul>
+            <li>RAG pipelines: chunking, embeddings, re-ranking</li>
+            <li>Milvus vector search · Watsonx OCR &amp; LLMs</li>
+            <li>Document classification against domain schedules</li>
+          </ul>
+        </div>
+        <div class="capcard">
+          <div class="ico">⛨</div>
+          <h4>Security &amp; Compliance</h4>
+          <p>Government platforms set the bar; everything else inherits it.</p>
+          <ul>
+            <li>OAuth 2.0, Auth0, mTLS, WS-Security</li>
+            <li>CSP, HSTS, and TLS hardening remediation</li>
+            <li>Code review and engineering standards ownership</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -228,21 +512,15 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="wrap">
-      <div class="sechead"><span class="secnum">02 / Skills</span><span class="secline"></span></div>
+      <div class="sechead"><span class="secnum">03 / Skills</span><span class="secline"></span></div>
       <h2>Technical arsenal</h2>
-      <p class="lead">The tools I reach for across backend, mobile, data, and delivery.</p>
+      <p class="lead">Ordered the way I actually use them — backend and AI first, then the clients and the pipes around them.</p>
       <div class="skillgrid reveal">
-        <div class="skillcard"><h3>Languages</h3><div class="chips">
-          <span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Dart</span><span class="chip">TypeScript</span><span class="chip">C#</span><span class="chip">SQL</span>
+        <div class="skillcard feat"><h3>Backend &amp; APIs <em>core</em></h3><div class="chips">
+          <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Hibernate</span><span class="chip">Microservices</span><span class="chip">Kafka</span><span class="chip">REST</span><span class="chip">SOAP (CXF)</span><span class="chip">GraphQL</span><span class="chip">Node.js / Express</span><span class="chip">.NET 8</span>
         </div></div>
-        <div class="skillcard"><h3>Backend &amp; APIs</h3><div class="chips">
-          <span class="chip">Spring Boot</span><span class="chip">Hibernate</span><span class="chip">Microservices</span><span class="chip">Node.js / Express</span><span class="chip">.NET</span><span class="chip">Kafka</span><span class="chip">REST</span><span class="chip">SOAP (CXF)</span><span class="chip">GraphQL</span>
-        </div></div>
-        <div class="skillcard"><h3>Mobile</h3><div class="chips">
-          <span class="chip">Flutter</span><span class="chip">Android (Kotlin/Java)</span><span class="chip">Jetpack Compose</span><span class="chip">MVVM · Bloc</span><span class="chip">Clean Architecture</span><span class="chip">Realm · Room</span><span class="chip">Bluetooth LE</span>
-        </div></div>
-        <div class="skillcard"><h3>Frontend</h3><div class="chips">
-          <span class="chip">Angular</span><span class="chip">React</span>
+        <div class="skillcard feat"><h3>AI &amp; Machine Learning <em>focus</em></h3><div class="chips">
+          <span class="chip">LLMs</span><span class="chip">RAG Pipelines</span><span class="chip">IBM Watsonx</span><span class="chip">Milvus</span><span class="chip">Vector Search</span><span class="chip">Embeddings</span><span class="chip">OCR / Doc AI</span><span class="chip">Prompt Design</span>
         </div></div>
         <div class="skillcard"><h3>Databases</h3><div class="chips">
           <span class="chip">IBM DB2</span><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span><span class="chip">Azure SQL</span><span class="chip">Redis</span><span class="chip">MongoDB</span>
@@ -251,10 +529,16 @@
           <span class="chip">Azure</span><span class="chip">IBM Cloud</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span><span class="chip">NGINX</span><span class="chip">Git</span>
         </div></div>
         <div class="skillcard"><h3>Security</h3><div class="chips">
-          <span class="chip">OAuth 2.0</span><span class="chip">Auth0</span><span class="chip">mTLS</span><span class="chip">WS-Security</span><span class="chip">API Security</span>
+          <span class="chip">OAuth 2.0</span><span class="chip">Auth0</span><span class="chip">mTLS</span><span class="chip">WS-Security</span><span class="chip">API Security</span><span class="chip">TLS Hardening</span>
         </div></div>
-        <div class="skillcard"><h3>AI &amp; Delivery</h3><div class="chips">
-          <span class="chip">LLMs / RAG</span><span class="chip">Watsonx</span><span class="chip">Milvus</span><span class="chip">Agile / Scrum</span><span class="chip">Unit Testing</span><span class="chip">Observability</span>
+        <div class="skillcard"><h3>Mobile</h3><div class="chips">
+          <span class="chip">Flutter</span><span class="chip">Android (Kotlin/Java)</span><span class="chip">Jetpack Compose</span><span class="chip">MVVM · Bloc</span><span class="chip">Clean Architecture</span><span class="chip">Realm · Room</span><span class="chip">Bluetooth LE</span>
+        </div></div>
+        <div class="skillcard"><h3>Languages</h3><div class="chips">
+          <span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Dart</span><span class="chip">TypeScript</span><span class="chip">C#</span><span class="chip">SQL</span>
+        </div></div>
+        <div class="skillcard"><h3>Frontend &amp; Delivery</h3><div class="chips">
+          <span class="chip">Angular</span><span class="chip">React</span><span class="chip">Agile / Scrum</span><span class="chip">Unit Testing</span><span class="chip">Observability</span><span class="chip">Code Review</span>
         </div></div>
       </div>
     </div>
@@ -263,15 +547,16 @@
   <!-- EXPERIENCE -->
   <section id="experience">
     <div class="wrap">
-      <div class="sechead"><span class="secnum">03 / Experience</span><span class="secline"></span></div>
+      <div class="sechead"><span class="secnum">04 / Experience</span><span class="secline"></span></div>
       <h2>Where I've worked</h2>
       <div class="xp reveal">
         <div class="xpcard">
           <div class="xptop"><span class="role">Senior Software Engineer</span><span class="when">Jun 2023 — Present</span></div>
           <div class="co">Software Productivity Strategists (SPS)</div>
           <ul>
-            <li>Architect and maintain Java/Spring Boot and Node/TypeScript microservices, plus native Android and Flutter clients, across enterprise and government platforms.</li>
-            <li>Lead the Data Management service area across DB2, MySQL, and SQL Server.</li>
+            <li>Architect and maintain Java/Spring Boot and Node/TypeScript microservices across enterprise and government platforms, plus the native Android and Flutter clients that consume them.</li>
+            <li>Lead the Data Management service area across DB2, MySQL, and SQL Server — schema design, query performance, and large-scale data export.</li>
+            <li>Built a production AI/RAG document-classification pipeline on Watsonx and Milvus, owning retrieval quality end to end.</li>
             <li>Own code reviews, engineering standards, and security remediation (CSP, HSTS, TLS hardening) across a portfolio of applications.</li>
           </ul>
         </div>
@@ -279,8 +564,8 @@
           <div class="xptop"><span class="role">Software Engineer</span><span class="when">Jan 2022 — May 2023</span></div>
           <div class="co">Innovo Technologies</div>
           <ul>
-            <li>Built cross-platform mobile apps in Flutter and Kotlin with clean architecture and offline-first functionality.</li>
             <li>Designed and integrated REST APIs and third-party services (Firebase, Google Maps, payments) for enterprise clients.</li>
+            <li>Built cross-platform mobile apps in Flutter and Kotlin with clean architecture and offline-first functionality.</li>
           </ul>
         </div>
         <div class="xpcard">
@@ -298,63 +583,166 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="wrap">
-      <div class="sechead"><span class="secnum">04 / Projects</span><span class="secline"></span></div>
+      <div class="sechead"><span class="secnum">05 / Selected Work</span><span class="secline"></span></div>
       <h2>Selected work</h2>
-      <p class="lead">Government platforms, live products, and AI systems I've engineered — backend, mobile, and full-stack.</p>
-      <div class="pgrid">
+      <p class="lead">Government platforms, AI systems, and live products I've engineered — backend-led, with the clients to match.</p>
 
-        <div class="pcard reveal">
+      <div class="filters" role="tablist" aria-label="Filter projects">
+        <button class="fbtn on" data-filter="all" aria-pressed="true">All</button>
+        <button class="fbtn" data-filter="backend" aria-pressed="false">Backend</button>
+        <button class="fbtn" data-filter="ai" aria-pressed="false">AI / RAG</button>
+        <button class="fbtn" data-filter="mobile" aria-pressed="false">Mobile</button>
+      </div>
+
+      <div class="pgrid" id="pgrid">
+
+        <div class="pcard flag reveal" data-cat="backend">
           <span class="pnum">01</span>
           <span class="pcat">Government · Backend</span>
-          <h3>SBSD — Virginia Gov</h3>
-          <p>Government SWaM supplier certification &amp; procurement platform — 10K+ certifications a year, compliance reporting, and secured SOAP APIs for state agencies. Includes a JDBC-streaming service for million-row exports.</p>
-          <div class="ptags"><span class="ptag">Spring Boot</span><span class="ptag">DB2</span><span class="ptag">Angular</span><span class="ptag">SOAP</span><span class="ptag">IBM Cloud</span></div>
+          <h3>SBSD — Virginia Gov <span class="pill b">Backend</span></h3>
+          <p>SWaM supplier certification &amp; procurement platform for the Commonwealth of Virginia. I build and run three production backends behind it — the <b>Dashboard</b> (certification workflows &amp; compliance reporting), the public <b>Directory</b>, and the secured <b>Web Services</b> layer consumed by state agencies.</p>
+          <div class="impact">⟶ 10K+ certifications/year · JDBC-streaming service for million-row exports</div>
+          <div class="ptags"><span class="ptag">Spring Boot</span><span class="ptag">DB2</span><span class="ptag">SOAP · CXF</span><span class="ptag">Angular</span><span class="ptag">IBM Cloud</span></div>
           <span class="plink na">Enterprise · internal</span>
         </div>
 
-        <div class="pcard reveal">
+        <div class="pcard flag reveal" data-cat="ai backend">
           <span class="pnum">02</span>
+          <span class="pcat">AI / RAG · Backend</span>
+          <h3>Chesterfield DMS <span class="pill">AI / RAG</span></h3>
+          <p>AI document-intelligence backend — a production RAG pipeline that classifies uploaded documents using Watsonx OCR/LLMs and Milvus vector search against county records-management schedules, exposed through Node/Express APIs.</p>
+          <div class="impact">⟶ Retrieval-grounded classification with cited source chunks</div>
+          <div class="ptags"><span class="ptag">Node.js</span><span class="ptag">Watsonx</span><span class="ptag">Milvus</span><span class="ptag">RAG</span><span class="ptag">Embeddings</span></div>
+          <span class="plink na">Enterprise · internal</span>
+        </div>
+
+        <div class="pcard reveal" data-cat="backend">
+          <span class="pnum">03</span>
+          <span class="pcat">Fintech · Backend</span>
+          <h3>TallyTask <span class="pill b">Backend</span></h3>
+          <p>Multi-company task, project &amp; expense platform with role-based access control, receipt OCR, and accounting integrations. I built the .NET 8 backend on Azure SQL for an early-stage startup.</p>
+          <div class="impact">⟶ Multi-tenant data model with per-company RBAC</div>
+          <div class="ptags"><span class="ptag">.NET 8</span><span class="ptag">Azure SQL</span><span class="ptag">OCR</span><span class="ptag">Angular</span><span class="ptag">Firebase</span></div>
+          <a class="plink" href="https://tallytask.ai" target="_blank" rel="noopener">tallytask.ai</a>
+        </div>
+
+        <div class="pcard reveal" data-cat="backend mobile">
+          <span class="pnum">04</span>
           <span class="pcat">Industrial IoT · Backend + Android</span>
-          <h3>GateKeyper</h3>
-          <p>Asset access-control platform — TypeScript/Express backend plus a Kotlin Android app that unlocks industrial equipment over Bluetooth LE after on-device safety checks. Live on Google Play.</p>
+          <h3>GateKeyper <span class="pill b">Backend</span></h3>
+          <p>Asset access-control platform — a TypeScript/Express backend on IBM Cloud plus a Kotlin Android app that unlocks industrial equipment over Bluetooth LE after on-device safety checks.</p>
+          <div class="impact">⟶ Live on Google Play · hardware-in-the-loop auth flow</div>
           <div class="ptags"><span class="ptag">Node · TS</span><span class="ptag">IBM Cloud</span><span class="ptag">Kotlin</span><span class="ptag">BLE</span></div>
           <a class="plink" href="https://gatekeyper.com" target="_blank" rel="noopener">gatekeyper.com</a>
         </div>
 
-        <div class="pcard reveal">
-          <span class="pnum">03</span>
+        <div class="pcard reveal" data-cat="mobile">
+          <span class="pnum">05</span>
           <span class="pcat">Saudi Logistics · Mobile</span>
           <h3>Vehicle Wallet</h3>
-          <p>Saudi fleet-refuelling platform governing fuel transactions in real time — cross-platform apps for drivers and gas-station operators across Flutter, Android, and iOS. Live on Play &amp; App Store.</p>
+          <p>Saudi fleet-refuelling platform governing fuel transactions in real time — cross-platform apps for drivers and gas-station operators built across Flutter, Android, and iOS.</p>
+          <div class="impact">⟶ Live on Google Play &amp; the App Store</div>
           <div class="ptags"><span class="ptag">Flutter</span><span class="ptag">Android</span><span class="ptag">iOS</span><span class="ptag">Google Maps</span></div>
           <a class="plink" href="https://vehiclewallet.sa" target="_blank" rel="noopener">vehiclewallet.sa</a>
         </div>
 
-        <div class="pcard reveal">
-          <span class="pnum">04</span>
-          <span class="pcat">Fintech · Backend</span>
-          <h3>TallyTask</h3>
-          <p>Multi-company task, project &amp; expense platform with role-based access, receipt OCR, and accounting integrations. Built the .NET 8 backend on Azure SQL for an early-stage startup.</p>
-          <div class="ptags"><span class="ptag">.NET 8</span><span class="ptag">Azure SQL</span><span class="ptag">Angular</span><span class="ptag">Firebase</span></div>
-          <a class="plink" href="https://tallytask.ai" target="_blank" rel="noopener">tallytask.ai</a>
-        </div>
-
-        <div class="pcard reveal">
-          <span class="pnum">05</span>
-          <span class="pcat">AI / RAG · Backend</span>
-          <h3>Chesterfield DMS</h3>
-          <p>AI document-intelligence backend — a production RAG pipeline that classifies uploads using Watsonx OCR/LLMs and Milvus vector search against records-management schedules, exposed via Node/Express APIs.</p>
-          <div class="ptags"><span class="ptag">Node.js</span><span class="ptag">Watsonx</span><span class="ptag">Milvus</span><span class="ptag">RAG</span></div>
-          <span class="plink na">Enterprise · internal</span>
-        </div>
-
-        <div class="pcard reveal">
+        <div class="pcard reveal" data-cat="mobile">
           <span class="pnum">06</span>
           <span class="pcat">Field Operations · Android</span>
           <h3>VPA — Field Ops</h3>
           <p>Offline-first native Android app for a US field-services firm — real-time job monitoring, geolocation tracking, and reliable background sync in low-connectivity environments.</p>
+          <div class="impact">⟶ Conflict-safe sync queue over intermittent networks</div>
           <div class="ptags"><span class="ptag">Android</span><span class="ptag">Kotlin</span><span class="ptag">Room</span><span class="ptag">Mapbox</span></div>
           <span class="plink na">Enterprise · internal</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLIER MOBILE APPS -->
+  <section id="apps">
+    <div class="wrap">
+      <div class="sechead"><span class="secnum">06 / Earlier Apps</span><span class="secline"></span></div>
+      <h2>Earlier mobile apps</h2>
+      <p class="lead">Consumer and client apps I designed, built, and published earlier in my career across Flutter, Kotlin, and native Java Android — the shipping practice that later made the backend work easier.</p>
+      <div class="appgrid reveal">
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#EF5B5B,#8B2E2E)">SD</div>
+            <div><h4>Sneaker Deals</h4><div class="ameta">Flutter · Consumer</div></div>
+          </div>
+          <p>Aggregates the hottest sneaker deals from trusted authorized retailers, shipping across the US and most other countries.</p>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/us/app/sneaker-deals-shopping-deals/id1581405844" target="_blank" rel="noopener">◉ App Store</a>
+          </div>
+        </div>
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#8B6FF0,#4A2EA8)">FR</div>
+            <div><h4>Framii</h4><div class="ameta">Flutter · Social</div></div>
+          </div>
+          <p>Instagram story frames and art app — frames loaded dynamically from a backend, with in-app purchases for premium packs.</p>
+          <div class="stores">
+            <a class="store" href="https://apps.apple.com/us/app/framii-insta-story-art-frames/id1535367939" target="_blank" rel="noopener">◉ App Store</a>
+          </div>
+        </div>
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#2DD4BF,#0F766E)">SP</div>
+            <div><h4>Spot</h4><div class="ameta">Android · Utility</div></div>
+          </div>
+          <p>Phone locating, GPS tracking, and texting in one place — location services and messaging in a single native Android app.</p>
+          <div class="stores">
+            <span class="store off">Archived · no longer listed</span>
+          </div>
+        </div>
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#F0A33C,#A35F12)">GP</div>
+            <div><h4>Glory Photo Editor</h4><div class="ameta">Kotlin · Media</div></div>
+          </div>
+          <p>Photo and video editing tool with stylish effects, filters, grids, and draw tools that take editing to the next level.</p>
+          <div class="stores">
+            <span class="store off">Archived · no longer listed</span>
+          </div>
+        </div>
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#5B8DEF,#24498F)">PI</div>
+            <div><h4>Pashto Idioms</h4><div class="ameta">Java · Culture</div></div>
+          </div>
+          <p>A large searchable collection of Pashto proverbs — making valuable Pashto literary material easy to browse and share.</p>
+          <div class="stores">
+            <span class="store off">Archived · no longer listed</span>
+          </div>
+        </div>
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#5FBF5F,#226B22)">MG</div>
+            <div><h4>My Gardener</h4><div class="ameta">Flutter · Services</div></div>
+          </div>
+          <p>Booking and service-management app built for a Malaysian gardening-services company, covering scheduling and job tracking.</p>
+          <div class="stores">
+            <span class="store off">Archived · no longer listed</span>
+          </div>
+        </div>
+
+        <div class="appcard">
+          <div class="apptop">
+            <div class="appicon" style="background:linear-gradient(140deg,#4FA8D8,#1D5A78)">MT</div>
+            <div><h4>Meet Tutor</h4><div class="ameta">Flutter · EdTech</div></div>
+          </div>
+          <p>A learning-management app for students and teachers — classes, materials, and progress tracking — built for a freelance client.</p>
+          <div class="stores">
+            <span class="store off">Client project</span>
+          </div>
         </div>
 
       </div>
@@ -364,15 +752,15 @@
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="wrap">
-      <div class="sechead"><span class="secnum">05 / Contact</span><span class="secline"></span></div>
+      <div class="sechead"><span class="secnum">07 / Contact</span><span class="secline"></span></div>
       <div class="contact-inner reveal">
         <h2>Let's build something<br/>together.</h2>
-        <p class="lead">Open to backend (Java/Spring Boot) and mobile (Flutter/Android) roles in Riyadh and across Saudi Arabia. I hold a transferable Iqama and can start within 30 days.</p>
+        <p class="lead">Open to senior <b>backend (Java/Spring Boot)</b> and <b>AI/LLM engineering</b> roles in Riyadh and across Saudi Arabia — mobile too, when it comes with the backend. I hold a transferable Iqama and can start within 30 days.</p>
         <div class="contact-cta">
           <a href="mailto:hassan.uswat@gmail.com" class="btn solid">hassan.uswat@gmail.com</a>
           <a href="tel:+966533152301" class="btn">+966 53 315 2301</a>
           <a href="https://linkedin.com/in/hasan-saleem-softengr" target="_blank" rel="noopener" class="btn">LinkedIn ↗</a>
-          <a href="https://github.com/hassanjani" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
+          <a href="https://github.com/hasanyousafzai" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
         </div>
       </div>
     </div>
@@ -382,13 +770,45 @@
 <footer>
   <div class="wrap foot-inner">
     <span>© 2026 Hasan Saleem — Riyadh, Saudi Arabia</span>
-    <span class="mono">Java · Spring Boot · Flutter · Android · Cloud</span>
+    <span class="mono">Java · Spring Boot · AI/RAG · Cloud · Flutter</span>
   </div>
 </footer>
 
 <script>
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Scroll reveal
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Mobile drawer
+  const burger = document.getElementById('burger');
+  const drawer = document.getElementById('drawer');
+  burger.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    drawer.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Project filters
+  const cards = document.querySelectorAll('#pgrid .pcard');
+  document.querySelectorAll('.fbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.fbtn').forEach(b => {
+        const on = b === btn;
+        b.classList.toggle('on', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+      cards.forEach(c => {
+        const cats = (c.dataset.cat || '').split(' ');
+        c.classList.toggle('hide', f !== 'all' && !cats.includes(f));
+      });
+    });
+  });
 </script>
 </body>
 </html>

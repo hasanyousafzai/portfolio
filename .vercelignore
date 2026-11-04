@@ -1,0 +1,6 @@
+# Source masters — not needed at runtime, kept locally for re-cropping
+photo.jpeg
+photo.jpg
+
+# Local tooling
+.claude/
